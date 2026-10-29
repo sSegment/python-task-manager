@@ -1,6 +1,7 @@
 # Python Task Manager
 
 A command-line task manger build using Python.
+This is a practice project developed as a part of my project-based learning.
 
 ## Planned features
 
@@ -14,8 +15,12 @@ A command-line task manger build using Python.
 
 ## Requirements
 
-- Python 3.14 or compatible version
+- Python 3.14 or compatible Python version
 
-## Running the application
+## Setup and Running the application
 
 Instructions will be added as the application develops.
+
+## Project status
+
+In development. This is a learning project, so features and code structure will evolve as I apply new concepts.
