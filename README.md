@@ -5,7 +5,6 @@ This is a practice project developed as a part of my project-based learning.
 
 ## Planned features
 
-- Complete tasks
 - Delete tasks
 - Edit tasks
 - Persist tasks using JSON and SQLite
@@ -15,6 +14,7 @@ This is a practice project developed as a part of my project-based learning.
 
 - Create tasks
 - List tasks
+- Complete tasks
 
 ## Requirements
 
