@@ -29,26 +29,23 @@ def list_tasks(tasks: list[dict]) -> None:
     for task in tasks:
         print(f"[{task['id']}] {task['title']} - {'Incomplete' if not task['completed'] else 'Complete'}")
 
-titles_list = [
-    "",
-    "  test  ",
-    "python",
-    "     ",
-    None,
-    123
-]
-
-for title in titles_list:
-    try:
-        print(create_task(tasks, title))
-    except (TypeError, ValueError) as error:
-        print(f"Error: {error}")
-
-list_tasks([])
-list_tasks([{'id': 1, 'title': 'test', 'completed': False, 'created_at': '2026-10-31T12:47:37+00:00'}])
-test_list = [
-    {'id': 1, 'title': 'test', 'completed': False, 'created_at': '2026-10-31T12:47:37+00:00'},
-    {'id': 2, 'title': 'test2', 'completed': True, 'created_at': '2026-10-31T12:47:37+00:00'},
-    {'id': 3, 'title': 'test3', 'completed': False, 'created_at': '2026-10-31T12:47:37+00:00'}
-]
-list_tasks(test_list)
+def complete_task(tasks: list[dict], task_id: int) -> dict:
+    for task in tasks:
+        if task_id == task["id"]:
+            if task["completed"]:
+                return {
+                    "status": "already_completed",
+                    "message": "Task was already completed",
+                    "task_id": task_id
+                }
+            task["completed"] = True
+            return {
+                "status": "task_completed",
+                "message": "Task was completed",
+                "task_id": task_id
+            }
+    return {
+        "status": "not_found",
+        "message": "Task not found",
+        "task_id": task_id
+    }
