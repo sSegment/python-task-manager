@@ -5,13 +5,16 @@ This is a practice project developed as a part of my project-based learning.
 
 ## Planned features
 
-- Create tasks
-- List tasks
 - Complete tasks
 - Delete tasks
 - Edit tasks
 - Persist tasks using JSON and SQLite
 - Automated tests
+
+## Completed features
+
+- Create tasks
+- List tasks
 
 ## Requirements
 
