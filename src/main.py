@@ -31,7 +31,7 @@ def list_tasks(tasks: list[dict]) -> None:
 
 def complete_task(tasks: list[dict], task_id: int) -> dict:
     if not isinstance(task_id, int) or isinstance(task_id, bool):
-        raise TypeError("Id must be of type integer")
+        raise TypeError("Id must be an integer")
     for task in tasks:
         if task_id == task["id"]:
             if task["completed"]:
@@ -72,9 +72,30 @@ def delete_task(tasks: list[dict], task_id: int) -> dict:
             "task_id": task_id
     }
 
+def edit_task(tasks: list[dict], title_change: str, task_id: int) -> dict:
+    if not isinstance(task_id, int) or isinstance(task_id, bool):
+        raise TypeError("Id must be an integer")
+    if not isinstance(title_change, str):
+        raise TypeError("Title must be a string")
+    title_change = title_change.strip()
+    if not title_change: #empty strings evaluate to False
+        raise ValueError("Title cannot be empty or contain only whitespace")
+    for task in tasks:
+        if task["id"] == task_id:
+            task["title"] = title_change
+            return {"status": "title_updated",
+                    "message": "Title changed successfully",
+                    "task_id": task_id,
+                    "updated_task": task
+            }
+    return {"status": "not_found",
+            "message": "Task not found",
+            "task_id": task_id
+    }
+
 test_list = [
     {"id": 1, "title": "test1", "completed": False},
     {"id": 2, "title": "test2", "completed": False},
     {"id": 3, "title": "test3", "completed": True},
     {"id": 4, "title": "test4", "completed": True}
-]
+] 
