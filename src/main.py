@@ -78,7 +78,7 @@ def edit_task(tasks: list[dict], title_change: str, task_id: int) -> dict:
     if not isinstance(title_change, str):
         raise TypeError("Title must be a string")
     title_change = title_change.strip()
-    if not title_change: #empty strings evaluate to False
+    if not title_change:
         raise ValueError("Title cannot be empty or contain only whitespace")
     for task in tasks:
         if task["id"] == task_id:
