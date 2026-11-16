@@ -5,7 +5,7 @@ This is a practice project developed as a part of my project-based learning.
 
 ## Planned features
 
-- Persist tasks using JSON, later using SQLite
+- Persist tasks using SQLite
 - Interactive CLI
 - Automated tests
 
@@ -16,6 +16,7 @@ This is a practice project developed as a part of my project-based learning.
 - Complete tasks
 - Delete tasks
 - Edit tasks
+- Persist tasks using JSON
 
 ## Requirements
 
